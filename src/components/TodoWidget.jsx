@@ -27,13 +27,19 @@ export default function TodoWidget() {
             onChange={(e) => setInput(e.target.value)}
             placeholder="Add task..."
           />
-          <button onClick={addTask}>Add</button>
+          <button className="add-btn" onClick={addTask}>Add</button>
+        <ul>
+          {tasks.map((task, index) => (
+            <li key={index}>
+              <input type="checkbox" />
+              <span>{task}</span>
+            </li>
+          ))}
+        </ul>
 
-          <ul>
-            {tasks.map((task, index) => (
-              <li key={index}>{task}</li>
-            ))}
-          </ul>
+
+
+
         </div>
       )}
     </div>

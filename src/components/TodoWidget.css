@@ -1,31 +1,38 @@
+h3{
+  text-align: left;
+  color: white;
+}
 .todo-widget {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: white;
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  background: rgb(146, 176, 190);
   width: 250px;
-  transition: all 0.3s ease;
+  min-height: 150px;  /* ensures it’s not too tiny */
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  box-sizing: border-box; 
+  margin: 50px auto;
+
 }
 
 .toggle-btn {
-  background: #4cafef;
-  border: none;
-  color: white;
-  font-size: 20px;
-  border-radius: 50%;
-  width: 35px;
-  height: 35px;
   position: absolute;
-  top: -15px;
-  right: -15px;
+  top: 10px;
+  right: 10px;
+  background: rgb(48, 106, 164);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
   cursor: pointer;
 }
 
+
 .widget-content {
-  padding: 15px;
+  padding: 20px 10px 10px ;
 }
 
 .widget-content input {
@@ -34,5 +41,63 @@
   margin-bottom: 8px;
   border: 1px solid #ddd;
   border-radius: 5px;
+  display: block;
+  margin: 8px auto;           /* centers it horizontally */
+  padding: 8px 10px;        /* inside padding (top/bottom 8px, left/right 10px) */
+  font-size: 14px;
+  box-sizing: border-box;
+  outline: none;
+  box-shadow: 0 0 5px rgba(30, 144, 255, 0.6); /* soft blue glow */
+
 }
+
+.todo-widget button.add-btn {
+  margin: 5px 20px 20px 0;
+  padding: 8px 10px;
+  background: rgb(96, 161, 191);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.todo-widget button.add-btn:hover {
+  background: rgb(60, 157, 179);
+}
+.todo-widget ul {
+  list-style: none;    /* removes bullets */
+  margin: 0;           /* reset default margin */
+  padding: 0;          /* reset default padding */
+}
+
+.todo-widget ul li {
+  display: flex;
+  align-items: center;     /* keeps checkbox + text vertically aligned */
+  color: white;
+  gap: 10px;               /* space between checkbox and text */
+  background: #3b5998;
+  margin: 6px 0;
+  padding: 8px 10px;
+  border-radius: 4px;
+}
+
+.todo-widget ul li input[type="checkbox"] {
+  flex-shrink: 0;          /* checkbox won't shrink */
+}
+
+.todo-widget ul li span {                /* text takes up remaining space */
+  text-align: left;        /* stick to the left */
+}
+
+.todo-widget ul li input[type="checkbox"] {
+  flex: 0 auto;   /* prevents shrinking */
+  margin: 0 10px 0 0;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+
 
