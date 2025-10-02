@@ -76,7 +76,7 @@ h3{
   display: flex;
   align-items: center;     /* keeps checkbox + text vertically aligned */
   color: white;
-  gap: 10px;               /* space between checkbox and text */
+  gap: 5px;               /* space between checkbox and text */
   background: #3b5998;
   margin: 6px 0;
   padding: 8px 10px;
@@ -88,7 +88,11 @@ h3{
 }
 
 .todo-widget ul li span {                /* text takes up remaining space */
-  text-align: left;        /* stick to the left */
+  text-align: left; 
+  flex: 1;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;     /* stick to the left */
 }
 
 .todo-widget ul li input[type="checkbox"] {
@@ -99,6 +103,55 @@ h3{
   cursor: pointer;
   
 }
+.task-done {
+  text-decoration: line-through;
+  opacity: 0.6;   /* lighter to show it's done */
+}
 
 
+.edit-btn, .delete-btn, .save-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  opacity: 0;             /* hidden by default */
+  transition: opacity 0.2s ease;
+}
+
+.todo-widget ul li:hover .edit-btn,
+.todo-widget ul li:hover .delete-btn,
+.todo-widget ul li:hover .save-btn {
+  opacity: 1;             /* visible on hover */
+}
+
+
+.actions {
+  display: flex;
+  gap: 2px; /* small gap only between edit/delete */
+}
+
+.todo-widget ul li span,
+.todo-widget ul li input[type="text"] {
+  flex: 1;  /* text/input grows to take space */
+  text-align: left;
+}
+.todo-widget ul li input[type="text"] {
+  flex: 1;                /* allow it to expand fully */
+  min-width: 0;           /* prevents flexbox from forcing shrink weirdness */
+  padding: 4px 6px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+}
+.todo-widget ul li textarea {
+  flex: 1;
+  min-width: 0;
+  resize: vertical;   /* lets user expand vertically */
+  padding: 4px 6px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+  max-height: 100px;
+  overflow-y: auto;
+}
 
