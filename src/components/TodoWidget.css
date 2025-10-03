@@ -7,7 +7,7 @@ h3{
   background: #8FAFC4;
   width: 250px;
   min-height: 150px;  /* ensures it’s not too tiny */
-  position: absolute;
+  position: relative;
   top: 20px;
   right: 20px;
   border-radius: 10px;
@@ -29,6 +29,7 @@ h3{
   width: 30px;
   height: 30px;
   cursor: pointer;
+  font-size: 20px;
 }
 
 
@@ -102,7 +103,7 @@ h3{
   width: 20px;
   height: 20px;
   cursor: pointer;
-   accent-color: #2e25de; /* green checkmark */
+  accent-color: #2e25de; /* green checkmark */
   
 }
 .task-done {
